@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "BugbearR <bugbearr@bugbearr.jp",
-  "license": "CC0-1.0"
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^26.2.1"
+  }
 }
