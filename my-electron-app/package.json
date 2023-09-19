@@ -1,12 +1,13 @@
 {
   "name": "my-electron-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My electron application",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "BugbearR <bugbearr@bugbearr.jp",
+  "license": "CC0-1.0"
 }
