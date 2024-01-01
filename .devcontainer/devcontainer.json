@@ -11,10 +11,6 @@
     }
   },
   "features": {
-    "docker-from-docker": {
-      "version": "latest",
-      "dockerDashComposeVersion": "v2"
-    }
-  },
-  "postStartCommand": "sudo /etc/init.d/dbus start"
+  }
+  // "postStartCommand": "sudo /etc/init.d/dbus start"
 }
