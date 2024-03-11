@@ -29,3 +29,7 @@
 import './index.css';
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log(hello("world"));
+});
