@@ -6,6 +6,23 @@ if (require('electron-squirrel-startup')) {
     app.quit();
 }
 
+function getSubMenuItem(subMenuItems, id) {
+    if (!subMenuItems) {
+        return null;
+    }
+
+    for (let i = 0; i < subMenuItems.length; i++) {
+        const subMenuItem = subMenuItems[i];
+        if (subMenuItem.id === id) {
+            return subMenuItem;
+        }
+        const found = getSubMenuItem(subMenuItem.submenu.items, id);
+        if (found) {
+            return found;
+        }
+    }
+}
+
 const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
@@ -31,9 +48,30 @@ const createWindow = () => {
                 submenu: [
                     {
                         label: "Checkable Item",
+                        id: "checkable",
                         type: "checkbox",
+                        checked: true,
                         click: (menuItem) => {
+                            console.log(menuItem);
                             console.log(menuItem.checked);
+                        }
+                    },
+                    {
+                        label: "Check on",
+                        click: () => {
+                            const menu = Menu.getApplicationMenu();
+                            // console.log(menu);
+                            // console.log(menu.items[0].submenu);
+                            getSubMenuItem(menu.items, "checkable").checked = true;
+                        }
+                    },
+                    {
+                        label: "Check off",
+                        click: () => {
+                            const menu = Menu.getApplicationMenu();
+                            // console.log(menu);
+                            // console.log(menu.items[0].submenu);
+                            getSubMenuItem(menu.items, "checkable").checked = false;
                         }
                     }
                 ]
