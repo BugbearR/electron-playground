@@ -28,7 +28,7 @@
     "style-loader": "^3.0.0"
   },
   "keywords": [],
-  "author": "higuchi",
+  "author": "BugbearR",
   "license": "MIT",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
